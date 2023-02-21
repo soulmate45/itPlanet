@@ -2,9 +2,12 @@
 using System.Net;
 using System.Text;
 using itPlanet.configs;
+using itPlanet.handler;
 using itPlanet.repository;
 using itPlanet.repository.account;
 using itPlanet.repository.postgres;
+using itPlanet.server;
+using itPlanet.service;
 using Newtonsoft.Json;
 using Npgsql;
 
@@ -19,9 +22,15 @@ var database = new PostgresDatabase(config);
 
 // Создание слоя для handler, service, repository 
 var repository = new Repository(database);
+var service = new Service(repository);
+var handler = new Handler(service);
 
-var account = repository.Account.Get("egor.unknown05@mail.ru", "1234");
-Console.WriteLine(account.Email);
+var router = new Router(handler);
+var server = new Server(config, router);
+
+server.Run();
+
+
 // Запустить сервер (слушатель на порт)
 
 // Отключить сервер (безопасно самостоятельно разорвать соединение с базой данных)
