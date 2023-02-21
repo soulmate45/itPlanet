@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Db7r90YAJ3aRV6ZOZcxL/bnPwOZYgFPvc9G9ZZIcuv7yOM7J5l1fgPd1zsKm0ZJ/+Do1ThxRAPKOvouQ4flJIw==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\playx\\RiderProjects\\itPlanet\\itPlanet\\itPlanet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\playx\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\playx\\.nuget\\packages\\newtonsoft.json\\13.0.3-beta1\\newtonsoft.json.13.0.3-beta1.nupkg.sha512",
+    "C:\\Users\\playx\\.nuget\\packages\\npgsql\\7.0.1\\npgsql.7.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
