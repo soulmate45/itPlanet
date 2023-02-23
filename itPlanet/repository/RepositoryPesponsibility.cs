@@ -24,6 +24,7 @@ public class RepositoryResponsibility
 
     protected TResultObject GetResultObject<TResultObject>(string query, params Object[] args) where TResultObject : new()
     {
+        
         var result = new TResultObject();
 
         var command = new NpgsqlCommand(query, _connection);
@@ -33,7 +34,7 @@ public class RepositoryResponsibility
             command.Parameters.Add(new NpgsqlParameter{Value = arg});
         }
         
-        var queryReader = command.ExecuteReader();
+        using var queryReader = command.ExecuteReader();
         var isMoveCursorResult = queryReader.Read();
         if (!isMoveCursorResult)
         {
@@ -63,7 +64,7 @@ public class RepositoryResponsibility
                   }
               }
               
-          }
+           }
         return result;
     }
 }
