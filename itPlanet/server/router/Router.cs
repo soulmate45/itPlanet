@@ -25,6 +25,7 @@ public class Router
         };
         _routerPoints.Add(routerPoint);
     }
+    
 
     /// <summary>
     /// Обрабатывает входящий запрос и определяет ему обработчик
